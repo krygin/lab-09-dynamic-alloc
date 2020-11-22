@@ -274,21 +274,3 @@ TEST(Matrix, Mult) {
   Destruct(c);
   Destruct(s);
 }
-
-TEST(Matrix, MultEmpty) {
-  Matrix m;
-  Construct(m, 3, 2);
-
-  Matrix c;
-  Construct(c, 3, 3);
-
-  Matrix s = Sub(m, c);
-
-  EXPECT_EQ(s.data_, nullptr);
-  EXPECT_EQ(s.n_, 0);
-  EXPECT_EQ(s.m_, 0);
-
-  Destruct(m);
-  Destruct(c);
-  Destruct(s);
-}
